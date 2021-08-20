@@ -3,37 +3,39 @@
 Rossmann é uma das maiores redes de drogarias da Europa, possuindo cerca de 56.200 mil funcionários e mais de 4.000 mil lojas em toda a Europa. Em 2019 seu faturamento foi superior a 10 bilhões de euros na Alemanha, Polônia, Hungria, República Tcheca, Turquia, Albânia, Kosovo e Espanha. 
 
 # Problema de negócio
-Com o sucesso da marca e crescimento no faturamento a Rossmann dentro do seu plano estratégico de crescimento reformar suas lojas a fim de renovar a estética e padronizar elas em linha com a proposta do time de arquitetura. Para que esse projeto seja executado a equipe de negócios da Rossmann precisa contar com as previsões de vendas das lojas para as próximas 6 semanas. Atualmente esse previsão é feita através de uma planilha em excel considerando a média das vendas, não sendo possível ter uma noção do volume de vendas e oscilações correspondentes a cada loja. Diante desse problema a empresa decidiu contratar um cientista de dados para auxiliar na busca de uma solução para esse gargalo no projeto. Durante a reunião realizada para debater este problema ficou a cargo do cientista de dados montar um modelo de previsão de venda com base em machine learning para responder esta questão de negócio.
-#### Questão de negócio da Rossmann: Quanto cada loja venderá nas próximas 6 semanas?
+Com o sucesso da marca e crescente aumento do faturamento a Rossmann dentro do seu plano estratégico de crecimento tem a necessidade de melhorar o modo como estabelece a previsão de vendas das lojas. Essa previsão serve como base para estabelecimento de metas a serem alcançadas dentro das lojas. Gerentes que conseguem atingir as metas estabelecidas ganham um bônus além de chances maiores de promoção. Atualmente a previsão de vendas é feita através de uma planilha em excel considerando a média das vendas, não sendo possível ter uma noção do volume de vendas e oscilações correspondentes a cada loja acarretando em distorções na hora de estabelecer as metas. Diante desse problema a empresa decidiu contratar um cientista de dados para auxiliar na busca de uma solução para esse gargalo no projeto. Durante a reunião realizada para debater este problema ficou a cargo do cientista de dados montar um modelo de previsão de venda com base em machine learning para responder esta questão de negócio.
+#### Questão de negócio da Rossmann: Quanto cada loja venderá nas próximas 4 semanas?
 
 # Resultados de negócio
 
 # Premissas do negócio
 Os dias em que as lojas estavam fechadas não foram considerados.
-<br /> Foi considerado apenas valores maiores que 0 no campo Sales
+<br /> Foi considerado apenas valores maiores que 0 no campo Sales;
+<br /> Foi assumido que 1 mês possui 4 semanas;
 <br /> Como foi assumido que existe um concorrente, caso não tenha uma data em que o copetidor abriu sua loja ou dados relacionados aos periodos promocionais, assumi-se a data da loja, assumindo a premissa que algumas variáveis derivadas do tempo são de extrema relavância para a representação de um comportamento.
 
 # Planejamento da solução
-Coleta de dados via [Kagle](https://www.kaggle.com/harlfoxem/housesalesprediction)
+Coleta de dados via [Kagle](https://www.kaggle.com/c/rossmann-store-sales)
 <br /> Entendimento de negócio
-<br />Tratamento de [dados](https://github.com/obregonrodrigo/house-rocket-insights/tree/main/notebooks)
+<br />Tratamento de [dados](https://github.com/obregonrodrigo/Rossmann-store-sales-project/tree/main/notebooks)
 <br /> - Tranformação de variaveis
 <br /> - Limpeza
 <br /> - Entendimento
-<br />Exploração de dados | confira o dashboard [Versão 1 - Heroku](https://analytics-house-rocket-21.herokuapp.com/)
+<br />Exploração de dados [dados](https://github.com/obregonrodrigo/Rossmann-store-sales-project/tree/main/notebooks)
 <br />Seleção de Recursos
-<br />Machine Learning Modelling
-<br /> - Hyperparameter fine tunning
+<br />Machine Learning Modelling - Escolhido o Random Forest Regressor
+<br /> - Hyperparameter fine tunning 
 <br />Resultados para o negócio
 <br />Telegram Boot
 <br />Conclusão
 
 # Insights do negócio
 Principais insights de dados
-<br />Imóveis qualificados para compra com vista para água representam menos de 1% do lucro esperado.
-<br />Aproximadamente 60% das propriedades ficaram disponíveis para compra na primavera ou no verão.
-<br />Imóveis reformados tem um valor 17,80% mais elevado que imóveis não reformados.
-<br />Imóveis com 2 banheiros são 37,99% mais caros do que aqueles com até 1 banheiro.
-<br />Imóveis com porão tem um valor 27,84% mais elevado que imóveis sem porão.
+<br />Após o dia 10 do mês lojas vendem mais.
+<br />Lojas do tipo 'extended assortment' que possuem um sortimento de produtos mais elevado vendem menos que lojas do tipo 'basic'.
+<br />Promoções que duram um grande espaço de tempo vendem regularmente durante um tempo e depois suas vendas vão caindo.
+<br />Com o passar dos anos após a sua abertura lojas tendem a vender menos.
+<br />Lojas vendem menos nos finais de semana.
 
 # Conclusão
+Através do modelo desenvolvido é possivel fazer a predição de vendas das próximas 4 semanas, levando em considerando o cenário esperado o melhor e o pior cenário. Esse projeto servirá de apoio para a elaboração de metas pela Rosmann.
