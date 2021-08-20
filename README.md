@@ -21,7 +21,7 @@ Coleta de dados via [Kagle](https://www.kaggle.com/c/rossmann-store-sales)
 <br /> - Tranformação de variaveis
 <br /> - Limpeza
 <br /> - Entendimento
-<br />Exploração de dados [dados](https://github.com/obregonrodrigo/Rossmann-store-sales-project/tree/main/notebooks)
+<br />Exploração de [dados](https://github.com/obregonrodrigo/Rossmann-store-sales-project/tree/main/notebooks)
 <br />Seleção de Recursos
 <br />Machine Learning Modelling - Escolhido o Random Forest Regressor
 <br /> - Hyperparameter fine tunning 
