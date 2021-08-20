@@ -7,6 +7,7 @@ Com o sucesso da marca e crescente aumento do faturamento a Rossmann dentro do s
 #### Questão de negócio da Rossmann: Quanto cada loja venderá nas próximas 4 semanas?
 
 # Resultados de negócio
+Através de um bot no telegram é possível realizar a consulta da previsão de venda esperada para as próximas 4 semas, loja a loja.
 
 # Premissas do negócio
 Os dias em que as lojas estavam fechadas não foram considerados.
