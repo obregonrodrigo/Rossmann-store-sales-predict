@@ -39,4 +39,4 @@ Principais insights de dados
 <br />Lojas vendem menos nos finais de semana.
 
 # Conclusão
-Através do modelo desenvolvido é possivel fazer a predição de vendas das próximas 4 semanas, levando em considerando o cenário esperado o melhor e o pior cenário. Esse projeto servirá de apoio para a elaboração de metas pela Rosmann.
+Em fase de deploy
