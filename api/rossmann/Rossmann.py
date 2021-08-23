@@ -5,7 +5,6 @@ import numpy as np
 import math
 import datetime
 
-
 class Rossmann(object):
 
     def __init__(self):
@@ -19,10 +18,6 @@ class Rossmann(object):
         self.store_type = pickle.load(open(self.home_path + 'parameter/store_type_scaler.pkl', 'rb'))
 
     def data_cleaning(self, df1):
-
-        #print(df1.dtypes)
-        #print(df1)
-
         # 1.1 Rename Columns
         cols_old = ['Store', 'DayOfWeek', 'Date', 'Open', 'Promo', 'StateHoliday', 'SchoolHoliday',
                     'StoreType', 'Assortment', 'CompetitionDistance', 'CompetitionOpenSinceMonth',
@@ -77,6 +72,8 @@ class Rossmann(object):
         df1['promo2_since_week'] = df1['promo2_since_week'].astype(int)
         df1['promo2_since_year'] = df1['promo2_since_year'].astype(int)
 
+        print('----- ----- ----- data_cleaning ----- ----- -----')
+
         return df1
 
     def feature_engineering(self, df2):
@@ -124,6 +121,8 @@ class Rossmann(object):
         ## 3.2 Selection of columns
         cols_drop = ['open', 'promo_interval', 'month_map']
         df2 = df2.drop(cols_drop, axis=1)
+
+        print('----- ----- ----- feature_engineering ----- ----- -----')
 
         return df2
 
@@ -199,13 +198,28 @@ class Rossmann(object):
             'week_of_year_sin',
             'week_of_year_cos']
 
+        print('----- ----- ----- data_preparation ----- ----- -----')
+
         return df5[cols_selected]
 
-    def get_prediction(self, model, test_raw, df3):
+    #    def add_columns( self, test_raw ):
+    #        test_raw['prediction'] = 0
+    #        test_raw.dtypes
+
+    #        return test_raw
+
+    def get_prediction(self, model, original_data, test_data):
         # prection
-        pred = model.predict(test_raw)
+        print('----- ----- ----- entrada ----- ----- -----')
+        pred = model.predict(test_data)
+        print('----- ----- ----- pred ----- ----- -----')
 
         # join pred into the original data
-        df3['prediction'] = np.expm1(pred)
+        original_data['prediction'] = np.expm1(pred)
+        print('----- ----- ----- original_data ----- ----- -----')
+
+        print(original_data.dtypes)
+
+        print('----- ----- ----- get_prediction ----- ----- -----')
 
         return original_data.to_json(orient='records', date_format='iso')
