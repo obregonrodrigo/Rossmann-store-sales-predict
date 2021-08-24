@@ -4,7 +4,7 @@ from flask import Flask, request, Response
 from rossmann.Rossmann import Rossmann
 
 # loading model
-model = pickle.load(open('C:/Users/Rodrigo/Repos/Rossmann-store-sales-project/model/model.pkl', 'rb'))
+model = pickle.load(open('C:/Users/Rodrigo/Repos/Rossmann-store-sales-project/model/xgb/model_rossmann.pkl', 'rb'))
 
 # initialize API
 app = Flask(__name__)
@@ -29,7 +29,6 @@ def rossmann_predict():
 
         # feature engineering
         df2 = pipeline.feature_engineering(df1)
-        #        test_raw_add = pipeline.add_columns( test_raw )
 
         # data preparation
         df3 = pipeline.data_preparation(df2)
