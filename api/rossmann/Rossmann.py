@@ -72,8 +72,6 @@ class Rossmann(object):
         df1['promo2_since_week'] = df1['promo2_since_week'].astype(int)
         df1['promo2_since_year'] = df1['promo2_since_year'].astype(int)
 
-        print('----- ----- ----- data_cleaning OK ----- ----- -----')
-
         return df1
 
     def feature_engineering(self, df2):
@@ -121,8 +119,6 @@ class Rossmann(object):
         ## 3.2 Selection of columns
         cols_drop = ['open', 'promo_interval', 'month_map']
         df2 = df2.drop(cols_drop, axis=1)
-
-        print('----- ----- ----- feature_engineering OK ----- ----- -----')
 
         return df2
 
@@ -198,18 +194,14 @@ class Rossmann(object):
             'week_of_year_sin',
             'week_of_year_cos']
 
-        print('----- ----- ----- data_preparation OK ----- ----- -----')
-
         return df5[cols_selected]
 
 
     def get_prediction(self, model, original_data, test_data):
         # prection
-
         pred = model.predict(test_data)
 
         # join pred into the original data
         original_data['prediction'] = np.expm1(pred)
-        print('----- ----- ----- get_prediction OK ----- ----- -----')
 
         return original_data.to_json(orient='records', date_format='iso')
