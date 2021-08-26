@@ -8,6 +8,8 @@ Com o sucesso da marca e crescente aumento do faturamento a Rossmann dentro do s
 
 # Resultados de negócio
 Através de um bot no telegram é possível realizar a consulta da previsão de venda esperada para as próximas 4 semas, loja a loja.
+Confira [aqui](https://t.me/Butlerbob_bot)
+(Digite o número de uma loja com uma / na frente. Exemplo: /22)
 
 # Premissas do negócio
 Os dias em que as lojas estavam fechadas não foram considerados.
@@ -27,7 +29,7 @@ Coleta de dados via [Kagle](https://www.kaggle.com/c/rossmann-store-sales)
 <br />Machine Learning Modelling - Escolhido o Random Forest Regressor
 <br /> - Hyperparameter fine tunning 
 <br />Resultados para o negócio
-<br />Telegram Boot
+<br />[Telegram Boot](https://t.me/Butlerbob_bot)
 <br />Conclusão
 
 # Insights do negócio
@@ -39,4 +41,4 @@ Principais insights de dados
 <br />Lojas vendem menos nos finais de semana.
 
 # Conclusão
-Em fase de deploy
+Através do modelo desenvolvido é possível fazer a predição de vendas das próximas 4 semanas, servido de apoio para a elaboração de metas da Rossmann.
