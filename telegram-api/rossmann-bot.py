@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import requests
+import os
 from flask import Flask, request, Response
 # constants
 token = '1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY'
@@ -10,6 +11,12 @@ token = '1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY'
 
 ## get updates
 #https://api.telegram.org/bot1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY/getUpdates
+
+## webhook
+#https://api.telegram.org/bot1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY/setWebhook?url=https://meigarom-c4hh.localhost.run
+
+## webhook heroku
+#https://api.telegram.org/bot1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY/setWebhook?url=https://rossmann-telegram-api21.herokuapp.com
 
 ## send message
 #https://api.telegram.org/bot1941843017:AAHJnMAp82jihgY8xxP45BgFvtbfQFp5SnY/sendMessage?chat_id=552137461&text=Olá,
@@ -26,8 +33,8 @@ def send_message( chat_id, text):
 
 def load_dataset( store_id):
     # loading test csv
-    df10 = pd.read_csv('../data/test.csv')
-    df_store_raw = pd.read_csv('../data/store.csv')
+    df10 = pd.read_csv('test.csv')
+    df_store_raw = pd.read_csv('store.csv')
 
     # merge test datase + store
     df_test = pd.merge( df10, df_store_raw, how='left', on='Store')
@@ -109,11 +116,12 @@ def index():
                 return Response('Ok', status=200 )
 
         else:
-            send_message(chat_id, 'O código da loja está incorreto')
+            send_message(chat_id, 'O código da loja não existe')
             return  Response('OK', status=200)
 
     else:
         return '<h1> Rossmann Telegram BOT </h1>'
 
 if __name__ == '__main__':
-    app.run( host='0.0.0.0', port=5000)
+    port = os.environ.get('PORT', 5000)
+    app.run( host='0.0.0.0', port=port)
