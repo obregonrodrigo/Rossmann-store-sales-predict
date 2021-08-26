@@ -8,8 +8,8 @@ Com o sucesso da marca e crescente aumento do faturamento a Rossmann dentro do s
 
 # Resultados de negócio
 Através de um bot no telegram é possível realizar a consulta da previsão de venda esperada para as próximas 4 semas, loja a loja.
-<br /><br />Confira [aqui](https://t.me/Butlerbob_bot)
-(Digite o número de uma loja com uma / na frente. Exemplo: /22)
+<br /><br />Confira o boot [aqui](https://t.me/Butlerbob_bot)
+<br />(Digite o número de uma loja com uma / na frente. Exemplo: /22)
 
 # Premissas do negócio
 Os dias em que as lojas estavam fechadas não foram considerados.
