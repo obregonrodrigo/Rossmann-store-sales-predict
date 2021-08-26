@@ -41,4 +41,4 @@ Principais insights de dados
 <br />Lojas vendem menos nos finais de semana.
 
 # Conclusão
-Através do modelo desenvolvido é possível fazer a predição de vendas das próximas 4 semanas, servido de apoio para a elaboração de metas da Rossmann.
+Através do modelo desenvolvido é possível fazer a predição de vendas das próximas 4 semanas, servindo de apoio para a elaboração de metas da Rossmann.
